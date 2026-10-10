@@ -1,11 +1,181 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>我的技术博客</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 0 30px;
+    }
+
+    header h1 {
+      font-size: 2em;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: #666;
+      font-size: 1.1em;
+    }
+
+    .section {
+      margin: 30px 0 15px;
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #2c3e50;
+      border-left: 4px solid #3498db;
+      padding-left: 12px;
+    }
+
+    /* PDF 卡片 */
+    .pdf-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .pdf-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .pdf-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+
+    .pdf-card h3 {
+      color: #2c3e50;
+      margin-bottom: 8px;
+      font-size: 1.1em;
+    }
+
+    .pdf-card .desc {
+      color: #666;
+      font-size: 0.9em;
+      margin-bottom: 15px;
+    }
+
+    .pdf-card .buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9em;
+      font-weight: 500;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-preview {
+      background: #3498db;
+      color: white;
+    }
+
+    .btn-preview:hover {
+      background: #2980b9;
+    }
+
+    .btn-download {
+      background: #27ae60;
+      color: white;
+    }
+
+    .btn-download:hover {
+      background: #219a52;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0 20px;
+      color: #999;
+      font-size: 0.85em;
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+    }
+
+    /* 手机适配 */
+    @media (max-width: 600px) {
+      body { padding: 15px; }
+      header h1 { font-size: 1.5em; }
+      .pdf-card { padding: 15px; }
+      .btn { padding: 10px 16px; }
+    }
+  </style>
 </head>
 <body>
-  <h1>你好，这是我的技术博客</h1>
-  <p>用 GitHub Pages 搭的，全世界都能访问。</p>
+
+  <header>
+    <h1>🗡️ 我的技术博客</h1>
+    <p>记录代码、AI、开发笔记 · 技术文档与资料分享</p>
+  </header>
+
+  <!-- ========== PDF 文档区 ========== -->
+  <div class="section">📄 技术文档</div>
+  <div class="pdf-grid">
+
+    <div class="pdf-card">
+      <h3>1513UE 资料文档</h3>
+      <p class="desc">关于 1513UE 的相关技术资料与笔记。</p>
+      <div class="buttons">
+        <a class="btn btn-preview" href="/1513UE(2).pdf" target="_blank">在线预览</a>
+        <a class="btn btn-download" href="/1513UE(2).pdf" download>下载 PDF</a>
+      </div>
+    </div>
+
+    <!-- 想加更多 PDF？复制下面这段，改名字和路径就行 -->
+    <!--
+    <div class="pdf-card">
+      <h3>第二份文档标题</h3>
+      <p class="desc">这份文档讲了什么内容。</p>
+      <div class="buttons">
+        <a class="btn btn-preview" href="/pdfs/第二份文档.pdf" target="_blank">在线预览</a>
+        <a class="btn btn-download" href="/pdfs/第二份文档.pdf" download>下载 PDF</a>
+      </div>
+    </div>
+    -->
+
+  </div>
+
+  <!-- ========== 文章区（以后写 md 文章可以放这里） ========== -->
+  <div class="section">📝 最新文章</div>
+  <div class="pdf-grid">
+    <div class="pdf-card">
+      <h3><a href="/2026/10/10/first-post.html" style="color:#2c3e50; text-decoration:none;">用 GitHub Pages 搭建技术博客</a></h3>
+      <p class="desc">2026-10-10 · 记录从零搭建博客的全过程</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 我的技术博客 · Powered by GitHub Pages</p>
+  </footer>
+
 </body>
 </html>
